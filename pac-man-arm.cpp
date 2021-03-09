@@ -16,7 +16,7 @@ pac_man_arm::pac_man_arm() {
     triggerPin_ = 12;
     echoPin_ = 13;
 
-    sensor_ (triggerPin_, echoPin_);
+    sensor_ = new NewPing(triggerPin_, echoPin_);
 
     sensorDist_ = 6;
     baseHeight_ = 6;
@@ -37,7 +37,7 @@ pac_man_arm::pac_man_arm(int swivelPin, int armRight, int armLeft,
     triggerPin_ = senseTrig;
     echoPin_ = senseEcho;
 
-    sensor_(senseTrig, senseEcho);
+    sensor_ = new NewPing(senseTrig, senseEcho);
 
     sensorDist_ = sensorDist;
     baseHeight_ = baseHeight;
@@ -74,7 +74,7 @@ float pac_man_arm::point(int theta, int r) {
     delay(1000);
 
     // get value
-    return sensor_(triggerPin_, echoPin_).ping_in();
+    return sensor_->ping_in();
 } 
 
 void pac_man_arm::grabBlock(float theta) {

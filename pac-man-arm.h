@@ -66,7 +66,7 @@ private:
 
     // dummy constants for newPing
     int echoPin_, triggerPin_;
-    NewPing sensor_(int, int);
+    NewPing* sensor_;
 
     // block locations on board:
     int currBlock_ = 0;
