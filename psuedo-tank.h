@@ -20,7 +20,7 @@ Developed with ROB-9457
 #define PSUEDO_TANK_H
 
 #include <Arduino.h>
-#include "SparkFun_TB6612FNG_Arduino_Library/src/SparkFun_TB6612.h"
+#include <SparkFun_TB6612.h>
 
 
 //used in some functions so you don't have to send a speed
